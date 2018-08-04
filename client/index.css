@@ -21,11 +21,11 @@ html{
 header{
     background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)),url(img/4.jpg);
     padding-right: 50%;
-    height: 100vh;
+    height: 105vh;
     width: 100%;
     background-size: cover;
     background-position: center;
-    
+    margin-top: 0;
 }
 
 .text-box{
@@ -35,7 +35,7 @@ header{
     width: auto;
     height: auto;
     left: 50%; 
-    font-family: 'Lato', sans-serif;
+    font-family: oswald, sans-serif;
 }
 
 h1{
@@ -85,11 +85,29 @@ h1{
 
 .bg-dark{
 	background-color: #21874A !important ;
+    margin: 0 0;
+    
 }
 .navbar-brand {
 	font-family: 'Lato', sans-serif;
     position: absolute;
     left: 100px;
+    
+}
+.nav-link a:hover,
+.nav-link a:active{
+    text-decoration: none;
+    color: #39bcb2;
+    
+    
+}
+
+.nav-link a :link,
+.nav-link a :visited{
+    text-decoration: none;
+    color: #39bcb2;
+    
+    
 }
 .aboutbtn{
       color: white;
@@ -130,14 +148,11 @@ h1{
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
-body{
-	padding-left: 10px;
-}
 
 
-section {
-    padding-top: 100px;
-    height: 100vh;
+section #map-container{
+    padding-top: 0px;
+    height: 75vh;
 }
 
 a {
@@ -148,15 +163,20 @@ a {
 
 
 .map {
-    width:80%;
+    width:98%;
     height: 600px;
     margin: 0 auto;
     margin-top: 50px ;
+    margin-bottom: auto;
     border-radius: 25px;
+    border: 2px #21874A dashed;
 }
 #map-container{
     text-align: center;
+    color: #39bcb2;
+    font-family: oswald;
 }
+
 
 
 /*ABOUT PAGE STYLING*/
@@ -170,7 +190,7 @@ hr{
     background-color: black;
 }
 .about-content{
-        margin-top: 100px;
+        margin-top: 10px;
         padding-left: 13%;
         padding-right: 13%;
 }
@@ -196,4 +216,54 @@ section .about-content{
     height: auto;
     text-align: center;
     
+}
+/*search bar*/
+#search-bar {
+    width: 30%;
+    padding: 6px;
+    border: solid 2px;
+    margin-top: 8px;
+    margin-right: 0px;
+    font-size: 30px;
+}
+
+#map-search {
+    height: 100px;
+    width: 100px;
+    color: green;
+    background-color: white;
+    font-size: 40px;
+    border: 0px ;
+    padding-left: 0px;
+
+}
+
+.map-heading {
+    margin-top: 0;
+    font-family:oswald;
+    font-weight: 100;
+    color: #39bcb2;
+    text-align: center;
+}
+
+/*below content*/
+
+.below{ 
+    background-color: #FBFFE1;
+}
+
+.search-div{
+    position: relative;
+    left: 35%;
+}
+
+/** main text content**/
+.text-content{
+    text-align: center;
+    padding: 100px;
+}
+.text-content h2{
+    color: #39bcb2;
+    font-family: oswald;
+    border-bottom: solid black 2px;
 }
