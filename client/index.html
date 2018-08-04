@@ -10,8 +10,8 @@
 	<link rel="stylesheet" type="text/css" href="index.css">
 	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 	<script type="text/javascript" src="bootstrap.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Gaegu|Lato:700" rel="stylesheet"> 
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Oswald" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 	        
 	<meta charset="UTF-8">
 
@@ -65,11 +65,11 @@
 				</li>
 				<li class="nav-link">
 				  
-					<a href="#Contact">Contact</a>
+					<a href="#cont">Contact</a>
 				</li>
                 
                 <li class="nav-link">
-                    <a href="https://github.com/shriram98/clean-space">Contribute</a>
+                    <a href="https://github.com/shriram98/clean-space" target="_blank">Contribute</a>
                 </li>
 			</ul>    
 			</div>
@@ -89,31 +89,55 @@
 		
 		</header>
 	</section>
-	<section id="map-container">
+    <div class="below">
+        <div class="text-content">
+            <h2>Project Clean-Space</h2>
+            <p>
+            Municipal solid waste management (MSWM) is one of the major environmental problems of Indian cities. Improper management of municipal solid waste (MSW) causes hazards to inhabitants. Various studies reveal that about 90% of MSW is disposed of unscientifically in open dumps and landfills, creating problems to public health and the environment.
+            </p>
+            <p>
+            The poor waste management system creates an undesirable atmosphere for us, as a community to live in.
 
+Thus we, at Clean-Space make it our responsibility and mission to allow the involvement of all the people in creating a greener and more sustainable future.
+We believe that each and every person can easily and equally contribute towards this common goal with the help of our project and hopefully create a brighter and happier tomorrow for everyone
+
+            </p>
+        
+        </div>
+	<section id="map-container">
+            <br><br>
+        <h2>Garbage Clustered Areas</h2>
 		<div id="map" class="map"></div>
 	</section>
+    
 	<section id="contribute">
-		<input id="search-bar" type="text" width="50px" height="20px" />
-		<button id="map-search" class="search-btn" onclick="findLocation()">search</button>
-		<div id="map2" class="map"></div><hr>
-		<br><br>Map Container
+        <hr>
+        <h2 class="map-heading">Help Us Find Garbage <i class="far fa-trash-alt"></i> </h2>
+        <div class="search-div">
+		<input id="search-bar" type="text" width="50px" height="20px" placeholder="Search" />
+		<button id="map-search" class="search-btn" onclick="findLocation()"><i class="fas fa-arrow-circle-right"></i> </button>
+        </div>
+		<div id="map2" class="map"></div>
+        
+		
 	</section>
 	<script src="maps/maps.js"></script>
 
 	<section id="About">
 		<hr>
 		<div class="about-content">
-		About Page
+            <h2>About Us</h2> 
 		<br>
-		When observing the Indian society, one major issue that comes to mind is the poor and inefficient waste management system that causes distress and pollution. This can further lead to outbreaks of various diseases.
+		When a innovative group of engineers like us, observe the Indian society, one major issue that comes to mind is the poor and inefficient waste management system that causes distress and pollution. This can further lead to outbreaks of various diseases.
 	    This is what we as Clean-Space is out to control with our innovative and efficient mapping system that tracks areas with piles of waste around the city with the help of user inputs from all around the community. We help create an easier platform for the community to report its grievances and an efficient way for the muncipality to find and clean out the reported areas 
 	</div>
  	</section>
+        <section id="cont">
 	<div class="contact">
 	Contact Us at: <br> xxxxx xxxxx
         <br> xxxx xxxxx
 	</div>
-
+        </section>
+    </div>
 </body>
 </html>
