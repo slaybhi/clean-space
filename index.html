@@ -27,6 +27,8 @@
 
 	<script src="https://unpkg.com/esri-leaflet@2.2.2/dist/esri-leaflet.js"></script>
 
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
 </head>
 
 <body>
@@ -91,11 +93,13 @@
 		</header>
 	</section>
 	<section id="map-container">
-		Map Container
 		<div id="map" class="map"></div>
 	</section>
 	<section id="contribute">
-		Contribute page
+		This is Contribute Container
+		<input id="search-bar" type="text" width="50px" height="20px" />
+		<button id="map-search" class="search-btn" onclick="findLocation()">search</button>
+		<div id="map2" class="map"></div>
 	</section>
 	<script src="maps/maps.js"></script>
 
