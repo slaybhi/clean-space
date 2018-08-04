@@ -191,8 +191,9 @@ section .about-content{
        
 }
 
-section #Contact {
+.contact {
     padding-top: 100px;
     height: auto;
+    text-align: center;
     
 }
