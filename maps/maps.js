@@ -1,3 +1,12 @@
+
+
+var markedPoints= [
+    {
+        latitude: 0,
+        longitude: 0,
+    }
+]
+
 mapboxgl.accessToken = 'pk.eyJ1Ijoic2hyaXJhbTk4IiwiYSI6ImNqa2Y0NTk0bjAzdGMzcnM3enNsNmM1d24ifQ.QVOrH27sDYsWSZVpLvr6fg';
 var map = L.map('map').setView([9.9312, 76.2673], 14);
 var i = 0;
