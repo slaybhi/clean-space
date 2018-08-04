@@ -3,29 +3,32 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 html{
-    background-color: white;
+    background-color: black;
     color: #555555;
     font-family: lato,arial,sans-serif;
     font-size: 30px;
     font-weight: 300;
     text-rendering: optimizeLegibility;
-
+    
 }
 
 
 
 header{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)),url(img/1.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)),url(img/4.jpg);
     height: 100vh;
+    width: 120%;
     background-size: cover;
     background-position: center;
+    
 }
 
 .text-box{
-    padding-top: 50vh;
+    padding-top: 25vh;
     text-align: center;
     margin:0;
     width: auto;
@@ -51,8 +54,8 @@ h1{
     text-decoration: none;
     border-radius: 200px;
     transition: background-color 0.2s, color 0.2s, border 0.2s;
-    border: 1px solid #e67e22;
-    color: #e67e22;
+    border: 1px solid #21874A;
+    color: #ffffff;
     
 }
 
@@ -60,37 +63,42 @@ h1{
 
 .btn:active,
 .btn:hover{
-    background-color: #cf6d17;
+    background-color: #21874A;
 }
 
 
 .btn-map:hover,
 .btn-map:active{
     
-    border: 1px solid #cf6d17;
+    border: 1px solid #21874A;
+    color: white;
     
 }
 
 .btn-contribute:active,
 .btn-contribute:hover{
-    border: 1px solid #cf6d17;
+    border: 1px solid #21874A;
     color: white;
-    
+}
 
 .bg-dark{
 	background-color: #21874A !important ;
 }
 .navbar-brand {
 	font-family: 'Lato', sans-serif;
+    position: absolute;
+    left: 100px;
 }
 /*font-family: 'Gaegu', cursive;*/
 .dropbtn{
+    color: white;
 	background-color: #21874A ;
 	border: none;
 }
 .dropdown {
     position: relative;
     display: inline-block;
+    
 }
 .dropdown-content {
     display: none;
@@ -117,3 +125,4 @@ h1{
 body{
 	padding-left: 10px;
 }
+
