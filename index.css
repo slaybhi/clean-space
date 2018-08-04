@@ -21,7 +21,7 @@ html{
 header{
     background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)),url(img/4.jpg);
     height: 100vh;
-    width: 120%;
+    width: 100%;
     background-size: cover;
     background-position: center;
     
@@ -126,3 +126,19 @@ body{
 	padding-left: 10px;
 }
 
+
+section {
+    padding-top: 100px;
+    height: 100vh;
+}
+
+a {
+    color: white;
+}
+
+.map {
+    width: 55%;
+    height: 600px;
+    margin: auto;
+    margin-top: 50px;
+}
