@@ -14,8 +14,10 @@ map.on('click', function(e) {
     })
     .on('mouseout', function(e) {
         this.closePopup();
-    });
-
+    })
+    .on('contextmenu', function(e) {
+        map.removeLayer(this)
+    })
     i++;
 
 });
