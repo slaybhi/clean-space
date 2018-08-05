@@ -193,15 +193,24 @@ hr{
         margin-top: 10px;
         padding-left: 13%;
         padding-right: 13%;
+        word-spacing: 2px;
+        letter-spacing: 1px;
+        
 }
 section .about-content{
     padding-top: 100px;
     height: auto;
 }
 
+.about-content h2 {
+    font-family: oswald;
+    padding-bottom: 10px;
+    border-bottom: solid black 1px;
+    color:  #39bcb2;
+}
 
 /*contact styling*/
-#Contact{
+#Cont{
      text-align: center;
     font-family: lato,arial,sans-serif;
     font-size: 25px;
@@ -215,7 +224,13 @@ section .about-content{
     padding-top: 100px;
     height: auto;
     text-align: center;
+
     
+}
+.contact h3{
+    color: #39bcb2;
+    font-family: oswald;
+    font-size: 60px;
 }
 /*search bar*/
 #search-bar {
