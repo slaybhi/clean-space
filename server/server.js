@@ -10,10 +10,10 @@ app.use(morgan('combined'));
 
 // to get the data to add
 app.get('/addMarker/:text', function(req, res) {
-    var markerLoc = req.params.text.split(",");
-    res.send(markerLoc[0], markerLoc[1]);
-    //console.log(markerLoc[0], markerLoc[1], markerLoc[2])
-    //addMarker(markerLoc[0], markerLoc[1], markerLoc[2]);
+    var markerloc = req.param.text.split(',');
+    addMarker(markerloc[0],markerloc[1], markerloc[3]);
+    res.send('sucess');
+ 
 })
 
 // to retrieve data
@@ -64,7 +64,7 @@ app.get('/data', function (req, res) {
 */
 
 app.listen(3000, function () {
-    console.log(`IMAD course app listening on port 3000!`);
+    console.log('app listening on port 3000!');
 
   });
 
