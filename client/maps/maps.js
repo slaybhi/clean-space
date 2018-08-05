@@ -7,18 +7,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-function loadMarkers(markedPoints) {
-    for(var i=0; i< markedPoints.length; i++) {
-    new L.marker([markedPoints[i].latitude, markedPoints[i].longitude]).addTo(map)
-    .bindPopup(markedPoints[i].level)
-    .on('mouseover', function(e){
-        this.openPopup();
-    })
-    .on('mouseout', function(e) {
-        this.closePopup();
-    });
-    }
-}
+
 
 
 
@@ -33,7 +22,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map2);
 
 map2.on('click', function(e) {
-    new L.marker([e.latlng.lat, e.latlng.lng]).addTo(map2)
+    var marker = new L.marker([e.latlng.lat, e.latlng.lng]).addTo(map2)
     .bindPopup('location ' + i)
     .on('mouseover', function(e){
         this.openPopup();
@@ -44,8 +33,18 @@ map2.on('click', function(e) {
     .on('contextmenu', function(e) {
         map2.removeLayer(this)
     })
+    .on('click', clickZoom);
+
+    
     i++;
 });
+
+
+
+function clickZoom(e) {
+ map2.setView(e.target.getLatLng(), 17);
+}
+
 
 // search feature 
 
@@ -60,15 +59,20 @@ function findLocation() {
                 lat      = location.lat(),
                 lng      = location.lng();
                 addToMap(lat, lng, textToSearch);
-                sendMarker(lat, lng, textToSearch);
+
+                map2.setView([lat, lng], 15);
+                
+                //sendMarker(lat, lng, textToSearch);
+
         }
     });
     
 }
 
 
+
 function addToMap(lat, lng, txt) {
-    new L.marker([lat, lng]).addTo(map2)
+   var mark =  new L.marker([lat, lng]).addTo(map2)
     .bindPopup(txt)
     .on('mouseover', function(e){
         this.openPopup();
@@ -78,10 +82,14 @@ function addToMap(lat, lng, txt) {
     })
     .on('contextmenu', function(e) {
         map2.removeLayer(this)
-    });
+    })
+    .on('click', clickZoom);
+    
 
-    console.log('checking');
 }
+
+
+
 
 
 // getting the data from the server
@@ -115,13 +123,32 @@ function parseMarker(result) {
         })
         .on('contextmenu', function(e) {
             map.removeLayer(this)
-        });
+        })
+        .on('click', clickZoom);
     
     }
 }
 
-function sendMarker(lat, lng, txt) {
-    
+getMarkers();   
+
+
+
+// giving data to the server
+
+/*function setMarker(lat, lng, txt) {
+    newRequest.onreadystatechange = function() {
+        if(newRequest.readyState === XMLHttpRequest.DONE) {
+          if(newRequest.status === 200) {
+            var result = newRequest.responseText;
+            console.log(result);
+          }
+        }
+      }
+      var url = 'http://localhost:3000/addMarker/'+lat+','+lng+','+txt;
+      newRequest.open('GET',url, true);
+      newRequest.send(null);
 }
 
-getMarkers();
+setMarker(12.3434, 11.4543, 'abc');
+
+*/
