@@ -1,28 +1,4 @@
 
-
-var markedPoints= [
-    {
-        latitude: 9.931233,
-        longitude:  76.267304,
-        level:'critical'
-    },
-    {
-        latitude: 10.015861,
-        longitude:  76.341867,
-        level: 'on alert' 
-    },
-    {
-        latitude: 10.527642,
-        longitude:  76.214435,
-        level: 'clean'
-    },
-    {
-        latitude: 10.107570,
-        longitude:  76.345662,
-        level: 'clean'
-    },
-];
-
 mapboxgl.accessToken = 'pk.eyJ1Ijoic2hyaXJhbTk4IiwiYSI6ImNqa2Y0NTk0bjAzdGMzcnM3enNsNmM1d24ifQ.QVOrH27sDYsWSZVpLvr6fg';
 var map = L.map('map').setView([9.9312, 76.2673], 12);
 
@@ -42,10 +18,8 @@ function loadMarkers(markedPoints) {
         this.closePopup();
     });
     }
-
 }
 
-loadMarkers(markedPoints);
 
 
 // for contributors part
@@ -86,10 +60,10 @@ function findLocation() {
                 lat      = location.lat(),
                 lng      = location.lng();
                 addToMap(lat, lng, textToSearch);
+                sendMarker(lat, lng, textToSearch);
         }
     });
     
-
 }
 
 
@@ -104,7 +78,50 @@ function addToMap(lat, lng, txt) {
     })
     .on('contextmenu', function(e) {
         map2.removeLayer(this)
-    })
+    });
+
+    console.log('checking');
 }
 
 
+// getting the data from the server
+var newRequest = new XMLHttpRequest();
+
+function getMarkers() {
+    newRequest.onreadystatechange = function() {
+        if(newRequest.readyState === XMLHttpRequest.DONE) {
+          if(newRequest.status === 200) {
+            var result = newRequest.responseText;
+            result = JSON.parse(result);
+            parseMarker(result);
+          }
+        }
+      }
+      var url = 'http://localhost:3000/getMarker/';
+      newRequest.open('GET',url, true);
+      newRequest.send(null);
+}
+
+
+function parseMarker(result) {
+    for(var i=0; i<result.length; i++) {
+        new L.marker([result[i].lat, result[i].lng]).addTo(map)
+        .bindPopup(result[i].name)
+        .on('mouseover', function(e){
+            this.openPopup();
+        })
+        .on('mouseout', function(e) {
+            this.closePopup();
+        })
+        .on('contextmenu', function(e) {
+            map.removeLayer(this)
+        });
+    
+    }
+}
+
+function sendMarker(lat, lng, txt) {
+    
+}
+
+getMarkers();
